@@ -1,0 +1,10 @@
+{
+    // editor options
+    "draw_white_space": "all",
+
+    // tabs and whitespace
+    "tab_size": 4,
+    "use_tab_stops": true,
+    "word_wrap": true,
+    "translate_tabs_to_spaces": true
+}
