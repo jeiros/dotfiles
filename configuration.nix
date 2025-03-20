@@ -47,9 +47,9 @@
   # Configure X11
 
   services = {
-  xserver = {
-    enable = true;
-    windowManager.i3 = {
+    xserver = {
+      enable = true;
+      windowManager.i3 = {
         enable = true;
         package = pkgs.i3;
         extraPackages = with pkgs; [
@@ -64,8 +64,8 @@
         variant = "nodeadkeys";
       };
     };
-  displayManager.defaultSession = "none+i3";
-  }
+    displayManager.defaultSession = "none+i3";
+  };
   # Configure console keymap
   console.keyMap = "uk";
 
