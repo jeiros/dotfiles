@@ -71,7 +71,6 @@
     neovim
     wget
     git
-    neofetch
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
