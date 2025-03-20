@@ -45,25 +45,27 @@
   };
 
   # Configure X11
-  services.xserver = {
-    enable = true;
-    displayManager.defaultSession = "none+i3";
-    windowManager.i3 = {
-      enable = true;
-      package = pkgs.i3;
-      extraPackages = with pkgs; [
-        dmenu          # Application launcher
-        i3status       # Status bar
-        i3lock         # Screen locker
-        i3blocks       # Status bar alternative
-      ];
-    };
-    xkb = {
-      layout = "es";
-      variant = "nodeadkeys";
-    };
-  };  
 
+  services = {
+  xserver = {
+    enable = true;
+    windowManager.i3 = {
+        enable = true;
+        package = pkgs.i3;
+        extraPackages = with pkgs; [
+          dmenu          # Application launcher
+          i3status       # Status bar
+          i3lock         # Screen locker
+          i3blocks       # Status bar alternative
+        ];
+      };
+      xkb = {
+        layout = "es";
+        variant = "nodeadkeys";
+      };
+    };
+  displayManager.defaultSession = "none+i3";
+  }
   # Configure console keymap
   console.keyMap = "uk";
 
@@ -96,7 +98,7 @@
 
   # Explicitly disable PipeWire
   services.pipewire.enable = false;
-  hardware.pulseaudio.enable = true;
+  services.pulseaudio.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
