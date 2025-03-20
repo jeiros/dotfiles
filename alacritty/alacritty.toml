@@ -1,0 +1,18 @@
+[font]
+size = 12
+
+[font.bold]
+family = "Berkeley Mono"
+style = "Bold"
+
+[font.bold_italic]
+family = "Berkeley Mono"
+style = "Bold Oblique"
+
+[font.italic]
+family = "Berkeley Mono"
+style = "Oblique"
+
+[font.normal]
+family = "Berkeley Mono"
+style = "Regular"
