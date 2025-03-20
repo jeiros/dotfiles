@@ -18,7 +18,6 @@
       specialArgs = {inherit inputs;};
       modules = [
         ./configuration.nix
-        ./vscode.nix
         # inputs.home-manager.nixosModules.default
       ];
     };
