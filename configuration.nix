@@ -63,6 +63,9 @@
     variant = "nodeadkeys";
   };
 
+  services.xserver.videoDrivers = [ "modesetting" ];
+
+
   # Configure console keymap
   console.keyMap = "uk";
 
