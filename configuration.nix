@@ -95,7 +95,6 @@
   ];
 
   # Optional: Enable sound
-  sound.enable = true;
   hardware.pulseaudio.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
