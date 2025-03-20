@@ -44,11 +44,25 @@
     LC_TIME = "en_GB.UTF-8";
   };
 
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "es";
-    variant = "nodeadkeys";
-  };
+  # Configure X11
+  services.xserver = {
+    enable = true;
+    displayManager.defaultSession = "none+i3";
+    windowManager.i3 = {
+      enable = true;
+      package = pkgs.i3;
+      extraPackages = with pkgs; [
+        dmenu          # Application launcher
+        i3status       # Status bar
+        i3lock         # Screen locker
+        i3blocks       # Status bar alternative
+      ];
+    };
+    xkb = {
+      layout = "es";
+      variant = "nodeadkeys";
+    };
+  };  
 
   # Configure console keymap
   console.keyMap = "uk";
@@ -71,7 +85,18 @@
     neovim
     wget
     git
+    rofi            # Better application launcher
+    feh             # Image viewer, used for setting wallpapers
+    picom           # Compositor for transparency
+    alacritty       # A modern terminal
+    arandr          # GUI for xrandr (display management)
+    xorg.xbacklight # Backlight control
+    lxappearance    # Theme switcher
   ];
+
+  # Optional: Enable sound
+  sound.enable = true;
+  hardware.pulseaudio.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
