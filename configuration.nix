@@ -94,7 +94,8 @@
     lxappearance    # Theme switcher
   ];
 
-  # Optional: Enable sound
+  # Explicitly disable PipeWire
+  services.pipewire.enable = false;
   hardware.pulseaudio.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
