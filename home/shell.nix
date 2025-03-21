@@ -4,7 +4,7 @@
   # Enable Zsh for the user
   programs.zsh = {
     enable = true;
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     enableCompletion = true;
     syntaxHighlighting.enable = true;
     
@@ -55,6 +55,7 @@
   home.packages = with pkgs; [
     zsh             # Include zsh in user packages
     fzf             # Fuzzy finder
+    zsh-autosuggestions
   ];
   
   # Set Zsh as the default shell for the user session
