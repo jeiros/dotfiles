@@ -95,9 +95,6 @@
   home.packages = with pkgs; [
     zsh             # Include zsh in user packages
     fzf             # Fuzzy finder
-    bat             # Better cat
-    exa             # Modern ls replacement
-    ripgrep         # Fast grep replacement
     fd              # Simple, fast alternative to find
     htop            # Interactive process viewer
     tldr            # Simplified man pages
