@@ -17,13 +17,6 @@
   # Packages to install for your user
   home.packages = with pkgs; [
     # Add user packages here
-    feh
-    picom
-    dex
-    xss-lock
-    dmenu
-    i3status
-    i3lock
   ];
 
   # This value determines the Home Manager release that your
