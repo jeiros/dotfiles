@@ -21,18 +21,13 @@
       enable = true;
       plugins = [
         "git"
-        "docker"
-        "sudo"
-        "command-not-found"
-        "history"
-        "extract"
       ];
       theme = "robbyrussell";
     };
     
     # Shell aliases
     shellAliases = {
-      ll = "ls -la";
+      l = "ls -l";
       update = "sudo nixos-rebuild switch";
       upgrade = "sudo nixos-rebuild switch --upgrade";
       config = "cd ~/.config/nixos && ${pkgs.neovim}/bin/nvim .";
@@ -45,60 +40,21 @@
     };
     
     # Additional Zsh options
-    initExtra = ''
-      # Set up direnv hook if installed
-      if command -v direnv &> /dev/null; then
-        eval "$(direnv hook zsh)"
-      fi
-      
-      # Better command history navigation with arrow keys
-      bindkey '^[[A' history-substring-search-up
-      bindkey '^[[B' history-substring-search-down
-      
-      # Set default editor
-      export EDITOR=nvim
-      export VISUAL=nvim
-      
+    initExtra = ''     
       # Custom functions
       function mkcd() {
         mkdir -p "$1" && cd "$1"
       }
       
-      # Colorize man pages
-      export LESS_TERMCAP_mb=$'\e[1;31m'
-      export LESS_TERMCAP_md=$'\e[1;31m'
-      export LESS_TERMCAP_me=$'\e[0m'
-      export LESS_TERMCAP_se=$'\e[0m'
-      export LESS_TERMCAP_so=$'\e[1;44;33m'
-      export LESS_TERMCAP_ue=$'\e[0m'
-      export LESS_TERMCAP_us=$'\e[1;32m'
-      
       # Welcome message
       echo "Welcome to NixOS, $(whoami)!"
     '';
-    
-    # Zsh plugins not available in oh-my-zsh
-    plugins = [
-      {
-        name = "zsh-history-substring-search";
-        src = pkgs.fetchFromGitHub {
-          owner = "zsh-users";
-          repo = "zsh-history-substring-search";
-          rev = "v1.0.2";
-          sha256 = "0y8va5kc2ram38hbk2cibkk64ffrabfv1sh4xm7pjspsba9n5p1y";
-        };
-      }
-    ];
   };
   
   # Install additional shell utilities
   home.packages = with pkgs; [
     zsh             # Include zsh in user packages
     fzf             # Fuzzy finder
-    fd              # Simple, fast alternative to find
-    htop            # Interactive process viewer
-    tldr            # Simplified man pages
-    jq              # JSON processor
   ];
   
   # Set Zsh as the default shell for the user session

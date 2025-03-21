@@ -94,6 +94,9 @@
     wget
     git
     google-chrome
+    htop
+    jq
+    fd              # Simple, fast alternative to find
     rofi            # Better application launcher
     feh             # Image viewer, used for setting wallpapers
     picom           # Compositor for transparency
