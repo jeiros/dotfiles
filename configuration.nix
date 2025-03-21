@@ -140,4 +140,5 @@
     users.juan = import ./home/default.nix;
     backupFileExtension = "backup";
   };
+  programs.zsh.enable = true;
 }
