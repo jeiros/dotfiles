@@ -135,5 +135,6 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     users.juan = import ./home/default.nix;
+    backupFileExtension = "backup";
   };
 }
