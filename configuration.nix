@@ -77,7 +77,10 @@
     isNormalUser = true;
     description = "Juan";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    packages = with pkgs; [
+      zsh
+    ];
+    shell = pkgs.zsh;
   };
 
   # Allow unfree packages
