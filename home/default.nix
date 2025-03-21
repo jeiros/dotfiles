@@ -5,6 +5,8 @@
   imports = [
     ./alacritty.nix
     ./i3.nix
+    ./git.nix
+    ./shell.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should manage
